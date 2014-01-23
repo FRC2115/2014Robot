@@ -1,19 +1,15 @@
-
 package robot.commands;
 
-/**
- *
- * @author bradmiller
- */
-public class ExampleCommand extends CommandBase {
+public class ThrowBall extends CommandBase {
 
-    public ExampleCommand() {
-        // Use requires() here to declare subsystem dependencies
-        // eg. requires(chassis);
+    public ThrowBall() {
+        requires(launcher);
     }
 
     // Called just before this Command runs the first time
     protected void initialize() {
+        launcher.set(true);
+        setTimeout(.75);
     }
 
     // Called repeatedly when this Command is scheduled to run
@@ -22,11 +18,12 @@ public class ExampleCommand extends CommandBase {
 
     // Make this return true when this Command no longer needs to run execute()
     protected boolean isFinished() {
-        return false;
+        return isTimedOut();
     }
 
     // Called once after isFinished returns true
     protected void end() {
+        launcher.set(false);
     }
 
     // Called when another command which requires one or more of the same
