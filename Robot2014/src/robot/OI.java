@@ -10,7 +10,7 @@ import edu.wpi.first.wpilibj.buttons.DigitalIOButton;
  */
 public class OI {
 
-    public Joystick leftJoy = new Joystick(0), rightJoystick = new Joystick(1);
+    public Joystick leftJoy = new Joystick(0), rightJoy = new Joystick(1);
 
     public OI() {
         

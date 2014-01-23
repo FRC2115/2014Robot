@@ -23,7 +23,7 @@ import robot.commands.ExampleCommand;
  */
 public class Robot2014 extends IterativeRobot {
 
-    Command autonomousCommand;
+//    Command autonomousCommand;c
 
     /**
      * This function is run when the robot is first started up and should be
@@ -31,7 +31,7 @@ public class Robot2014 extends IterativeRobot {
      */
     public void robotInit() {
         // instantiate the command used for the autonomous period
-        autonomousCommand = new ExampleCommand();
+//        autonomousCommand = new ExampleCommand();
 
         // Initialize all subsystems
         CommandBase.init();
@@ -39,7 +39,7 @@ public class Robot2014 extends IterativeRobot {
 
     public void autonomousInit() {
         // schedule the autonomous command (example)
-        autonomousCommand.start();
+//        autonomousCommand.start();
     }
 
     /**
@@ -54,7 +54,7 @@ public class Robot2014 extends IterativeRobot {
         // teleop starts running. If you want the autonomous to 
         // continue until interrupted by another command, remove
         // this line or comment it out.
-        autonomousCommand.cancel();
+//        autonomousCommand.cancel();
     }
 
     /**

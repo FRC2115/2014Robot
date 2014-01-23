@@ -12,7 +12,7 @@ public class RobotMap {
             RIGHT_MOTOR = 2,
             
             //Solenoids
-//            LEFT_SOLENOID = 1,
+            LEFT_SOLENOID = 1,
             
             //Compressor
             COMPRESSOR_CHANNEL = 1,

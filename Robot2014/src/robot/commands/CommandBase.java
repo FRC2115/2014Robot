@@ -3,6 +3,7 @@ package robot.commands;
 import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import robot.OI;
+import robot.subsystems.Chassis;
 import robot.subsystems.ExampleSubsystem;
 
 /**
@@ -16,6 +17,7 @@ public abstract class CommandBase extends Command {
     public static OI oi;
     // Create a single static instance of all of your subsystems
     public static ExampleSubsystem exampleSubsystem = new ExampleSubsystem();
+    public static Chassis chassis = new Chassis();
 
     public static void init() {
         // This MUST be here. If the OI creates Commands (which it very likely
