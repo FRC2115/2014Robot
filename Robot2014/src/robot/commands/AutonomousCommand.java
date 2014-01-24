@@ -13,9 +13,16 @@ import edu.wpi.first.wpilibj.command.CommandGroup;
 public class AutonomousCommand extends CommandGroup {
     
     public AutonomousCommand() {
+        //Not sure if we need this
+        requires(CommandBase.chassis);
+        requires(CommandBase.launcher);
+        
+        //The commands
         addSequential(new FillAirTank());
-        addParallel(new ThrowBall());
-        addParallel(new Drive(1.5,.7,.7));
+        addSequential(new ThrowBall());
+        addSequential(new Drive(1.5,.7,.7));
+        
+        
         // Add Commands here:
         // e.g. addSequential(new Command1());
         //      addSequential(new Command2());
