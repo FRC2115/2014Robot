@@ -9,4 +9,9 @@
 # Netbeans Stuff #
 *.properties
 *.MF
+
+# image files #
+*.suite
+*.metadata
+*.sym
 /build/
