@@ -19,6 +19,7 @@ public abstract class CommandBase extends Command {
     // Create a single static instance of all of your subsystems
     public static Chassis chassis = new Chassis();
     public static Launcher launcher = new Launcher();
+    public static Lift lift = new Lift();
     public static Compressor compressor = new Compressor(RobotMap.COMPRESSOR_CHANNEL, RobotMap.RELAY_SWITCH_CHANNEL);
     
     public static void init() {
