@@ -4,23 +4,32 @@
  */
 package robot.subsystems;
 
-import edu.wpi.first.wpilibj.Jaguar;
-//import edu.wpi.first.wpilibj.Servo;
+import edu.wpi.first.wpilibj.AnalogChannel;
+import edu.wpi.first.wpilibj.Solenoid;
 import edu.wpi.first.wpilibj.command.Subsystem;
 import robot.RobotMap;
-import robot.commands.moveLift;
+import robot.commands.AutoLift;
+import robot.commands.MoveLift;
 
 public class Lift extends Subsystem {
     
-    public double stow = 0, ground = 120;
-    private Jaguar servo = new Jaguar(RobotMap.LIFT_MOTOR);
+    private Solenoid lift = new Solenoid(RobotMap.LIFT_SOLENOID);
+    public AnalogChannel sonar = new AnalogChannel(1);
 //    private Servo s = new Servo(servo);
 
     public void initDefaultCommand() {
-        setDefaultCommand(new moveLift(stow));
+        setDefaultCommand(new AutoLift());
     }
     
-    public void moveLift(double angle){
-        servo.setPosition(stow);
+    public void moveLift(boolean b){
+        lift.set(b);
+    }
+    
+    public void autoLift()
+    {
+        if(sonar.getVoltage() < .25)
+            lift.set(true);
+        else
+            lift.set(false);
     }
 }

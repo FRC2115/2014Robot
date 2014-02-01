@@ -8,22 +8,20 @@ package robot.commands;
  *
  * @author Tripp
  */
-public class moveLift extends CommandBase {
+public class MoveLift extends CommandBase {
     
-    private double angle;
-    public moveLift(double angle) {
+    public MoveLift() {
         requires(lift);
-        this.angle = angle;
     }
 
     // Called just before this Command runs the first time
     protected void initialize() {
-       angle = (angle/360);
+        
     }
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
-        lift.moveLift(angle);
+            lift.moveLift(true);
     }
 
     // Make this return true when this Command no longer needs to run execute()
@@ -38,5 +36,7 @@ public class moveLift extends CommandBase {
     // Called when another command which requires one or more of the same
     // subsystems is scheduled to run
     protected void interrupted() {
+        lift.moveLift(false);
+        lift.initDefaultCommand();
     }
 }

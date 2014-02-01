@@ -10,9 +10,9 @@ public class RobotMap {
 
     public static final int LEFT_MOTOR = 1,
             RIGHT_MOTOR = 2,
-            LIFT_MOTOR = 3,
             //Solenoids
             LAUNCHER_SOLENOID = 1,
+            LIFT_SOLENOID = 2,
             //Compressor
             COMPRESSOR_CHANNEL = 1,
             //Relay switch

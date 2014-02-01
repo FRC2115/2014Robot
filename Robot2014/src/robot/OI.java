@@ -14,10 +14,11 @@ public class OI {
 
     public Joystick leftJoy = new Joystick(0), rightJoy = new Joystick(1);
 
-    public JoystickButton throwBall = new JoystickButton(rightJoy, 1),
-            liftBall = new JoystickButton(rightJoy, 2);
+    public JoystickButton throwBallButton = new JoystickButton(rightJoy, 1),
+            liftBallButton = new JoystickButton(rightJoy, 2);
     
     public OI() {
-        throwBall.whenPressed(new ThrowBall());
+        throwBallButton.whenPressed(new ThrowBall());
+        liftBallButton.whileHeld(new MoveLift());
     }
 }
