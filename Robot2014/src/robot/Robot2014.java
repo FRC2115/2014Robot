@@ -9,8 +9,8 @@ package robot;
 import edu.wpi.first.wpilibj.IterativeRobot;
 import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.command.Scheduler;
+import robot.commands.AutonomousCommand;
 import robot.commands.CommandBase;
-import robot.commands.Drive;
 
 /**
  * The VM is configured to automatically run this class, and to call the
@@ -29,7 +29,7 @@ public class Robot2014 extends IterativeRobot {
      */
     public void robotInit() {
         // instantiate the command used for the autonomous period
-        autonomousCommand = new Drive(2, .4, .4);
+        autonomousCommand = new AutonomousCommand();
 
         // Initialize all subsystems
         CommandBase.init();

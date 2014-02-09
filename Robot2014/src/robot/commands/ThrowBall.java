@@ -8,7 +8,8 @@ public class ThrowBall extends CommandBase {
 
     // Called just before this Command runs the first time
     protected void initialize() {
-        launcher.set(true);
+        if(lift.get())
+            launcher.set(true);
         setTimeout(.75);
     }
 

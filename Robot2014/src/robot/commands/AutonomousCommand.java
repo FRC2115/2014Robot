@@ -14,13 +14,14 @@ public class AutonomousCommand extends CommandGroup {
     
     public AutonomousCommand() {
         //Not sure if we need this
+        
         requires(CommandBase.chassis);
         requires(CommandBase.launcher);
         
         //The commands
         addSequential(new FillAirTank());
         addSequential(new ThrowBall());
-        addSequential(new Drive(1.5,.7,.7));
+        addSequential(new Drive(1.5,.4,.4));
         
         
         // Add Commands here:

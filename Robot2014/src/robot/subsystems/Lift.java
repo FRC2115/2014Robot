@@ -9,27 +9,30 @@ import edu.wpi.first.wpilibj.Solenoid;
 import edu.wpi.first.wpilibj.command.Subsystem;
 import robot.RobotMap;
 import robot.commands.AutoLift;
-import robot.commands.MoveLift;
 
 public class Lift extends Subsystem {
-    
+
     private Solenoid lift = new Solenoid(RobotMap.LIFT_SOLENOID);
-    public AnalogChannel sonar = new AnalogChannel(1);
+    public AnalogChannel sonar = new AnalogChannel(1, 1);
 //    private Servo s = new Servo(servo);
 
     public void initDefaultCommand() {
         setDefaultCommand(new AutoLift());
     }
-    
-    public void moveLift(boolean b){
+
+    public void moveLift(boolean b) {
         lift.set(b);
     }
-    
-    public void autoLift()
-    {
-        if(sonar.getVoltage() < .25)
+
+    public boolean get() {
+        return lift.get();
+    }
+
+    public void autoLift() {
+        if (sonar.getValue() < 25) {
             lift.set(true);
-        else
+        } else {
             lift.set(false);
+        }
     }
 }

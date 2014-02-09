@@ -15,7 +15,6 @@ public class Chassis extends Subsystem {
 
     public void driveWithJoystick(double leftSpeed, double rightSpeed) {
         leftSpeed *= -1;
-        rightSpeed *= -1;
         leftJag.set(leftSpeed);
         rightJag.set(rightSpeed);
         System.out.println("Left: " + leftJag.getRaw() + "\nRight: " + rightJag.getRaw()); //will remove

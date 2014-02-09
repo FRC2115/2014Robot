@@ -11,8 +11,9 @@ public class RobotMap {
     public static final int LEFT_MOTOR = 1,
             RIGHT_MOTOR = 2,
             //Solenoids
-            LAUNCHER_SOLENOID = 1,
-            LIFT_SOLENOID = 2,
+            LAUNCHER_LEFT_SOLENOID = 1,
+            LAUNCHER_RIGHT_SOLENOID = 2,
+            LIFT_SOLENOID = 3,
             //Compressor
             COMPRESSOR_CHANNEL = 1,
             //Relay switch

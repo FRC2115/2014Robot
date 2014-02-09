@@ -6,13 +6,15 @@ import robot.RobotMap;
 
 public class Launcher extends Subsystem {
     
-    private Solenoid s = new Solenoid(RobotMap.LAUNCHER_SOLENOID);
+    private Solenoid left = new Solenoid(RobotMap.LAUNCHER_LEFT_SOLENOID),
+            right = new Solenoid(RobotMap.LAUNCHER_RIGHT_SOLENOID);
     
     public void initDefaultCommand() {
-        s.set(false);
+        set(false);
     }
     
     public void set(boolean b) {
-        s.set(b);
+        left.set(b);
+        right.set(b);
     }
 }
